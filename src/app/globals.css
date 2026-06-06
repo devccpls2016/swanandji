@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Logo parchment yellow as the site background */
+  background-color: #f1f6de;
+  font-family: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+.font-serif {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-space {
+    @apply py-16 md:py-24;
+  }
+
+  /* Fields styled to logo parchment palette */
+  .field {
+    @apply w-full rounded-2xl border border-forest/20 bg-sand/40 px-4 py-3 text-sm text-bark outline-none transition focus:border-forest/50 focus:bg-white focus:ring-2 focus:ring-forest/15;
+  }
+
+  /* Primary button — logo maroon (#5c1a10) with parchment text */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-forest px-6 py-3 text-sm font-semibold text-cream transition hover:bg-bark active:scale-95;
+  }
+
+  /* Secondary button — white with maroon border + text */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-forest/25 bg-white px-6 py-3 text-sm font-semibold text-forest transition hover:-translate-y-0.5 hover:bg-sand/60 hover:shadow-soft;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
