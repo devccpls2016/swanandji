@@ -4,8 +4,9 @@ import { VisualPlaceholder } from "@/components/visual-placeholder";
 import Link from "next/link";
 import { formatCurrency } from "@/lib/utils";
 
-export default function FarmhouseRoomPage({ params }: { params: { roomId: string } }) {
-  const room = farmhouseRooms.find(r => r.id === params.roomId);
+export default async function FarmhouseRoomPage({ params }: { params: Promise<{ roomId: string }> }) {
+  const { roomId } = await params;
+  const room = farmhouseRooms.find(r => r.id === roomId);
 
   if (!room) {
     notFound();
